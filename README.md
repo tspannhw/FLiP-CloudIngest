@@ -22,3 +22,21 @@ bin/pulsar-admin sinks status --tenant public --namespace default --name iotjets
 
 
 ```
+
+
+## Ingest Stocks REST into JDBC
+
+```
+
+bin/pulsar-daemon start websocket
+bin/pulsar-admin schemas delete stocks
+bin/pulsar-admin schemas delete stocks-partition-0
+bin/pulsar-admin schemas delete persistent://public/default/stocks-partition-0
+bin/pulsar-admin schemas delete persistent://public/default/stocks
+bin/pulsar-admin topics list public/default
+bin/pulsar-admin topics create persistent://public/default/stocks
+bin/pulsar-admin sinks get --tenant public --namespace default --name stocks-postgres-jdbc-sink 
+
+
+```
+
