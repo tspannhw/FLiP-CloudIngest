@@ -6,6 +6,9 @@ Ingest real-time to any cloud
 ## Reference
 
 * https://github.com/tspannhw/FLiP-SQL
+* https://pulsar.apache.org/docs/en/standalone/
+* https://ci.apache.org/projects/flink/flink-docs-release-1.13//docs/try-flink/local_installation/
+* https://streamnative.io/en/cloud/managed/
 
 
 ## Ingest NVIDIA XAVIER Data into Cloud Postgresql
@@ -19,6 +22,8 @@ bin/pulsar-admin sinks create --archive ./connectors/pulsar-io-jdbc-postgres-2.8
 bin/pulsar-admin sinks list --tenant public --namespace default
 bin/pulsar-admin sinks get --tenant public --namespace default --name iotjetsonjson-postgres-jdbc-sink 
 bin/pulsar-admin sinks status --tenant public --namespace default --name iotjetsonjson-postgres-jdbc-sink 
+
+bin/pulsar-client consume "persistent://public/default/nvidia-sensor-partition-0" -s "nano2gbgo" -n 0
 
 
 ```
@@ -35,7 +40,6 @@ bin/pulsar-admin schemas delete persistent://public/default/stocks-partition-0
 bin/pulsar-admin schemas delete persistent://public/default/stocks
 bin/pulsar-admin topics list public/default
 bin/pulsar-admin topics create persistent://public/default/stocks
-bin/pulsar-admin sinks get --tenant public --namespace default --name stocks-postgres-jdbc-sink 
 
 
 ```
