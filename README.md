@@ -10,6 +10,7 @@ Ingest real-time to any cloud
 * https://ci.apache.org/projects/flink/flink-docs-release-1.13//docs/try-flink/local_installation/
 * https://streamnative.io/en/cloud/managed/
 * https://github.com/tspannhw/FLiP-EdgeAI
+* https://superset.apache.org/docs/databases/installing-database-drivers
 
 
 ## Ingest NVIDIA XAVIER Data into Cloud Postgresql
